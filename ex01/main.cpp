@@ -3,12 +3,13 @@
 
 int main()
 {
-	ClapTrap *a = new ScavTrap();
+	// ClapTrap *a = new ScavTrap(); // To demonstrate why using virtual Destructor
+	// delete a;
 
-	delete a;
+	ScavTrap scav("scav");
 
-	// scav.setEnergyPoints(0);
-	// scav.attack("bob");
-	// scav.guardGate();
-	// scav.guardGate();
+	scav.setEnergyPoints(0);
+	scav.attack("bob");
+	scav.guardGate();
+	scav.guardGate();
 }

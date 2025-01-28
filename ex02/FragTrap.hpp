@@ -1,34 +1,27 @@
-#ifndef SCAV_TRAP_HPP
-# define SCAV_TRAP_HPP
+#ifndef FRAG_TRAP_HPP
+# define FRAG_TRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 	private:
-		bool	_gateKeeperMode;
+
 	public:
 		// ####################
 		// Constructors & Destructors
-		ScavTrap();
-		ScavTrap(const std::string& name);
-		ScavTrap(const ScavTrap& obj);
-		virtual ~ScavTrap();
+		FragTrap();
+		FragTrap(const std::string &name);
+		FragTrap(const FragTrap &obj);
+		virtual ~FragTrap();
 
 		// ####################
 		// Operator Overload
-		ScavTrap& operator=(const ScavTrap& obj);
-
-		// ####################
-		// Getters & Setters
-		bool	getGateKeeperMode() const;
-		void	setGateKeeperMode(const bool& mode);
+		FragTrap &operator=(const FragTrap &obj);
 
 		// ####################
 		// Methodes
-		void attack(const std::string& target);
-		void guardGate();
-		
+		void highFivesGuys(void);
 };
 
 #endif

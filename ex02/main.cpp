@@ -1,14 +1,19 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap *a = new ScavTrap();
+	FragTrap frag("frag");
+	
+	frag.highFivesGuys();
+	std::cout << frag.getHitPoints() << std::endl;
+	frag.setHitPoints(20);
+	std::cout << frag.getHitPoints() << std::endl;
 
-	delete a;
+	FragTrap frag2(frag);
+	frag2.highFivesGuys();
+	std::cout << frag.getHitPoints() << std::endl;
 
-	// scav.setEnergyPoints(0);
-	// scav.attack("bob");
-	// scav.guardGate();
-	// scav.guardGate();
+	return (0);
 }

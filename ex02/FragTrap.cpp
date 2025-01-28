@@ -1,36 +1,33 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 // ####################
 // Constructors & Destructors
-ScavTrap::ScavTrap() : ClapTrap(), _gateKeeperMode(false)
+FragTrap::FragTrap() : ClapTrap()
 {
-	std::cout << "ScavTrap Default Constructor called" << std::endl;
+	std::cout << "FragTrap Default Constructor called" << std::endl;
 	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name), _gateKeeperMode(false)
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap " << getName() << "'s Constructor called" << std::endl;
+	std::cout << "FragTrap " << getName() << "'s Constructor called" << std::endl;
 	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& obj)
-{
-	std::cout << "ScavTrap Copy constructor called" << std::endl;
-	*this = obj;
-}
+FragTrap::FragTrap(const FragTrap& obj) : ClapTrap(obj)
+{ std::cout << "FragTrap Copy constructor called" << std::endl; }
 
-ScavTrap::~ScavTrap()
-{ std::cout << "ScavTrap " << getName() << "'s Destructor called" << std::endl; }
+FragTrap::~FragTrap()
+{ std::cout << "FragTrap " << getName() << "'s Destructor called" << std::endl; }
 // ####################
 
 // ####################
 // Operator Overload
-ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
+FragTrap &FragTrap::operator=(const FragTrap &obj)
 {
 	if (this != &obj)
 	{
@@ -38,49 +35,13 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& obj)
 		setHitPoints(obj.getHitPoints());
 		setEnergyPoints(obj.getEnergyPoints());
 		setAttackDamage(obj.getAttackDamage());
-		setGateKeeperMode(obj.getGateKeeperMode());
 	}
 	return (*this);
 }
 // ####################
 
 // ####################
-// Getters & Setters
-bool ScavTrap::getGateKeeperMode() const
-{ return (this->_gateKeeperMode); }
-
-void ScavTrap::setGateKeeperMode(const bool& mode)
-{ this->_gateKeeperMode = mode; }
-// ####################
-
-// ####################
 // Methodes
-void ScavTrap::attack(const std::string& target)
-{
-	ClapTrap::attack(target);
-	if (getEnergyPoints() > 0 && getHitPoints() > 0)
-	{
-		std::cout << "ScavTrap "
-				  << getName()
-				  << " attacks "
-				  << target
-				  << ", causing "
-				  << getAttackDamage()
-				  << " points of damage!"
-				  << std::endl;
-	}
-	else
-		std::cout << "ScavTrap " << getName() << " cannot attack..." << std::endl;
-}
-
-void ScavTrap::guardGate()
-{
-	if (getGateKeeperMode())
-		std::cout << "ScavTrap " << getName() << " is already in gate keeper mode..." << std::endl;
-	else
-	{
-		std::cout << "ScavTrap " << getName() << " is now in gate keeper mode!" << std::endl;
-		setGateKeeperMode(true);
-	}
-}
+void FragTrap::highFivesGuys(void)
+{ std::cout << "FragTrap " << getName() << " is doing a high five!" << std::endl; }
 // ####################

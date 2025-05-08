@@ -7,10 +7,10 @@
 class ClapTrap
 {
 	private:
-		std::string _name;
-		int			_hitPoints;
-		int			_energyPoints;
-		int			_attackDamage;
+		std::string		_name;
+		unsigned int	_hitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage;
 
 	public:
 		// ####################
@@ -26,14 +26,14 @@ class ClapTrap
 
 		// ####################
 		// Getters & Setters
-		std::string getName() const;
-		int			getHitPoints() const;
-		int			getEnergyPoints() const;
-		int			getAttackDamage() const;
-		void		setName(const std::string& name);
-		void		setHitPoints(const int& hitPoints);
-		void		setEnergyPoints(const int& energyPoints);
-		void		setAttackDamage(const int& attackDamage);
+		std::string		getName() const;
+		unsigned int	getHitPoints() const;
+		unsigned int	getEnergyPoints() const;
+		unsigned int	getAttackDamage() const;
+		void			setName(const std::string& name);
+		void			setHitPoints(const unsigned int& hitPoints);
+		void			setEnergyPoints(const unsigned int& energyPoints);
+		void			setAttackDamage(const unsigned int& attackDamage);
 
 		// ####################
 		// Methodes

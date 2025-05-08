@@ -57,7 +57,6 @@ void ScavTrap::setGateKeeperMode(const bool& mode)
 // Methodes
 void ScavTrap::attack(const std::string& target)
 {
-	ClapTrap::attack(target);
 	if (getEnergyPoints() > 0 && getHitPoints() > 0)
 	{
 		std::cout << "ScavTrap "
